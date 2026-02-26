@@ -51,9 +51,21 @@ sudo service postgresql start
 
 Crea y prepara base de datos:
 
+1. Crea la tabla en la base de datos
+
 ```bash
 rails db:create
+```
+
+2. migra las configuraciones
+
+```bash
 rails db:migrate
+```
+
+3. Corre los datos de la tabla type_document y type_person
+
+```bash
 rails db:seed
 ```
 
@@ -81,3 +93,6 @@ rails console
 rails routes
 rails db:migrate:status
 ```
+## Foto del despliegue del Rails
+
+![alt text](image.png)
