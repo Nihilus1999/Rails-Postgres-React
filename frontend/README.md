@@ -89,3 +89,30 @@ App disponible en:
 npm cache clean --force
 npm install
 ```
+---
+
+## Fotos del frontend
+
+1. Vista del home (inicio del app)
+
+![alt text](image.png)
+
+2. Tabla con todos los usuarios
+
+![alt text](image-1.png)
+
+3. Vista de crear usuario
+
+![alt text](image-2.png)
+
+4. Modal con los detalles creados
+
+![alt text](image-3.png)
+
+5. Vista de edicion del usuario
+
+![alt text](image-4.png)
+
+6. Modal para eliminar usuario
+
+![alt text](image-5.png)
