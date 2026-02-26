@@ -1,7 +1,7 @@
 export const email_regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 export const phone_regex = /^04(12|14|16|24|26)\d{7}$/;
 export const name_regex = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/;
-export const ci_regex = /^\d{1,8}$/;
+export const cedula_regex = /^\d{1,8}$/;
 export const RIF_REGEX = /^[VEJPGC]-?\d{8}-?\d$/i;
 export const PASSPORT_REGEX = /^[a-zA-Z0-9]{6,9}$/;
 
@@ -9,8 +9,8 @@ export const validations_messages = {
   required: "Requerido",
   email: "debe tener un formato válido (ejemplo: prueba@gmail.com)",
   phone: "debe tener formato venezolano válido (ej: 04121234567)",
-  name: "solo permite letras y espacios (incluye ñ y acentos)",
-  ci: "La CI debe contener máximo 8 dígitos numéricos",
+  name: "solo permite letras y espacios",
+  cedula: "La cédula debe contener máximo 8 dígitos numéricos",
   rif: "para RIF debe cumplir formato V-12345678-9 (también acepta sin guiones)",
   passport: "para pasaporte debe ser alfanumérico de 6 a 9 caracteres",
   issueDateFuture: "no puede ser una fecha futura",
@@ -24,8 +24,8 @@ export function validateDocumentNumberByType(documentNumber, documentTypeName) {
 
   const type = documentTypeName.toLowerCase();
 
-  if (type === "ci" || type === "cédula" || type === "cedula") {
-    return ci_regex.test(documentNumber) || validations_messages.ci;
+  if (type === "cédula" || type === "cedula") {
+    return cedula_regex.test(documentNumber) || validations_messages.cedula;
   }
 
   if (type === "rif") {

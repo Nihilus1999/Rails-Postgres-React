@@ -4,7 +4,7 @@ class User < ApplicationRecord
 
   VENEZUELAN_MOBILE_PHONE_REGEX = /\A04(12|14|16|24|26)\d{7}\z/
   NAME_ONLY_LETTERS_SPACES_REGEX = /\A[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+\z/
-  CI_REGEX = /\A\d{1,8}\z/
+  CEDULA_REGEX = /\A\d{1,8}\z/
   RIF_REGEX = /\A[VEJPGC]-?\d{8}-?\d\z/i
   PASSPORT_REGEX = /\A[a-zA-Z0-9]{6,9}\z/
 
@@ -49,9 +49,9 @@ class User < ApplicationRecord
     return if document_number.blank? || document_type.blank?
 
     case document_type.name.to_s.downcase
-    when "ci", "cédula", "cedula"
-      unless document_number.match?(CI_REGEX)
-        errors.add(:document_number, "para CI debe contener máximo 8 dígitos numéricos")
+    when "cédula", "cedula"
+      unless document_number.match?(CEDULA_REGEX)
+        errors.add(:document_number, "para cédula debe contener máximo 8 dígitos numéricos")
       end
     when "rif"
       unless document_number.match?(RIF_REGEX)

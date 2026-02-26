@@ -48,17 +48,6 @@ node -v
 npm -v
 ```
 
----
-
-## Instalación y ejecución (Linux)
-
-Desde la carpeta `frontend`:
-
-```bash
-npm install
-npm run frontend
-```
-
 ## Variables de entorno
 
 Este frontend usa la variable:
@@ -72,6 +61,17 @@ VITE_LOCAL_HOST=http://localhost:3000
 ```
 
 > Nota: en Vite, las variables expuestas al cliente deben comenzar por `VITE_`.
+
+---
+
+## Instalación y ejecución (Linux)
+
+Desde la carpeta `frontend`:
+
+```bash
+npm install
+npm run frontend
+```
 
 App disponible en:
 

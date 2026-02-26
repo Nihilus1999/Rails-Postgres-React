@@ -78,6 +78,10 @@ Disponible en:
 
 ---
 
+## Instruciones adicionales
+
+Revisen el readme dentro de la carpeta frontend para poder instalar y configurar la parte de react del proyecto correctamente
+
 ## Comandos útiles
 
 ```bash

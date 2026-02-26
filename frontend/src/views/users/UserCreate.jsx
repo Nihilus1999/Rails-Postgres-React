@@ -325,11 +325,14 @@ export default function UserCreate() {
                     <Box sx={{ flex: 1 }}>
                     <TextField
                       label="Teléfono Secundario"
+                      type="tel"
                       fullWidth
                       variant="outlined"
                       disabled={loading}
-                      helperText=" "
+                      error={!!errors.secondary_phone}
+                      helperText={errors.secondary_phone?.message || " "}
                       sx={textFieldSx}
+                      inputProps={{ inputMode: "numeric", pattern: "[0-9]*", maxLength: 11 }}
                       {...register("secondary_phone", {
                         validate: (value) => (
                           !value || phone_regex.test(value) || validations_messages.phone

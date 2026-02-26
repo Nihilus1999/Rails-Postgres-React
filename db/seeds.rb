@@ -6,7 +6,7 @@ natural = PersonType.create!(name: "Natural")
 juridica = PersonType.create!(name: "Jurídica")
 
 
-DocumentType.create!(name: "CI", person_type: natural)
+DocumentType.create!(name: "Cédula", person_type: natural)
 DocumentType.create!(name: "Pasaporte", person_type: natural)
 DocumentType.create!(name: "RIF", person_type: juridica)
 
