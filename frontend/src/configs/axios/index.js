@@ -11,7 +11,6 @@ const index = axios.create({
   },
 });
 
-// Interceptor de Peticiones (Request)
 index.interceptors.request.use(
   (config) => {
     const token = localStorage.getItem("token");

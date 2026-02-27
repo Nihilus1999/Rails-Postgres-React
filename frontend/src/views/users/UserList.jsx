@@ -19,7 +19,7 @@ import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import TableDesign from "@/views/components/TableDesign";
-import UserDetailsModal from "@/views/components/UserDetailsModal";
+import UserDetailsModal from "@/views/users/UserDetailsModal";
 import { getUsers, deleteUser } from "@/services/user";
 
 const UserList = () => {
