@@ -84,7 +84,9 @@ const UserList = () => {
 
     try {
       const response = await deleteUser(userToDelete.id);
-      setRows((prevRows) => prevRows.filter((row) => row.id !== userToDelete.id));
+      setRows((prevRows) =>
+        prevRows.filter((row) => row.id !== userToDelete.id),
+      );
       setSuccessMsg(response.message);
       setError("");
       setSnackbarOpen(true);
@@ -113,6 +115,14 @@ const UserList = () => {
   };
 
   const columns = [
+    {
+      field: "tipoPersona",
+      headerName: "Tipo Persona",
+      flex: 1,
+      minWidth: 150,
+      align: "center",
+      headerAlign: "center",
+    },
     {
       field: "tipoDocumento",
       headerName: "Tipo Documento",
@@ -154,14 +164,6 @@ const UserList = () => {
       headerAlign: "center",
     },
     {
-      field: "tipoPersona",
-      headerName: "Tipo Persona",
-      flex: 1,
-      minWidth: 150,
-      align: "center",
-      headerAlign: "center",
-    },
-    {
       field: "acciones",
       headerName: "Gestionar",
       width: 210,
@@ -185,29 +187,29 @@ const UserList = () => {
           </Tooltip>
           <Tooltip title="Editar" arrow>
             <IconButton
-            component={Link}
-            to={`/users/edit/${params.row.id}`}
-            size="small"
-            sx={{
-              border: "1px solid rgba(25, 118, 210, 0.25)",
-              bgcolor: "rgba(25, 118, 210, 0.06)",
-              "&:hover": { bgcolor: "rgba(25, 118, 210, 0.12)" },
-            }}
-          >
-            <EditIcon color="primary" />
+              component={Link}
+              to={`/users/edit/${params.row.id}`}
+              size="small"
+              sx={{
+                border: "1px solid rgba(25, 118, 210, 0.25)",
+                bgcolor: "rgba(25, 118, 210, 0.06)",
+                "&:hover": { bgcolor: "rgba(25, 118, 210, 0.12)" },
+              }}
+            >
+              <EditIcon color="primary" />
             </IconButton>
           </Tooltip>
           <Tooltip title="Eliminar" arrow>
             <IconButton
-            onClick={() => handleOpenDeleteConfirm(params.row)}
-            size="small"
-            sx={{
-              border: "1px solid rgba(211, 47, 47, 0.25)",
-              bgcolor: "rgba(211, 47, 47, 0.06)",
-              "&:hover": { bgcolor: "rgba(211, 47, 47, 0.12)" },
-            }}
-          >
-            <DeleteIcon color="error" />
+              onClick={() => handleOpenDeleteConfirm(params.row)}
+              size="small"
+              sx={{
+                border: "1px solid rgba(211, 47, 47, 0.25)",
+                bgcolor: "rgba(211, 47, 47, 0.06)",
+                "&:hover": { bgcolor: "rgba(211, 47, 47, 0.12)" },
+              }}
+            >
+              <DeleteIcon color="error" />
             </IconButton>
           </Tooltip>
         </Box>
@@ -231,7 +233,7 @@ const UserList = () => {
   return (
     <Box sx={{ p: { xs: 2, md: 3 } }}>
       <TableDesign
-        title="Lista de Usuarios"
+        title="Lista de clientes"
         buttonLink="/users/create"
         rows={rows}
         columns={columns}
@@ -277,7 +279,8 @@ const UserList = () => {
 
         <DialogContent>
           <Typography variant="body2" color="text.secondary">
-            ¿Estás seguro de que deseas eliminar a <strong>{userToDelete?.nombre || "este usuario"}</strong>?
+            ¿Estás seguro de que deseas eliminar a{" "}
+            <strong>{userToDelete?.nombre || "este usuario"}</strong>?
           </Typography>
         </DialogContent>
 

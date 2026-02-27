@@ -241,11 +241,11 @@ export default function UserEdit() {
             <Typography
               variant="h5"
               fontWeight={800}
-              sx={{ letterSpacing: 0.2, color: "text.primary" }}
+              sx={{ color: "text.primary" }}
             >
               Editar Cliente
             </Typography>
-            <Typography variant="body2" color="text.secondary">
+             <Typography variant="body2" color="text.secondary" sx={{ mt: 1 }}>
               Actualiza la información del cliente seleccionado.
             </Typography>
           </Box>

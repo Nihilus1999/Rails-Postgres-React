@@ -148,11 +148,11 @@ export default function UserCreate() {
             <Typography
               variant="h5"
               fontWeight={800}
-              sx={{ letterSpacing: 0.2, color: "text.primary" }}
+              sx={{ color: "text.primary" }}
             >
               Registro de Nuevo Cliente
             </Typography>
-            <Typography variant="body2" color="text.secondary">
+            <Typography variant="body2" color="text.secondary" sx={{ mt: 1 }}>
               Completa la información para crear el perfil del cliente.
             </Typography>
           </Box>

@@ -1,6 +1,6 @@
 # Frontend React (Vite + MUI)
 
-Interfaz web del proyecto `rails-postgres-app`, desarrollada con React y Vite.
+Interfaz web del proyecto desarrollada con React y Vite.
 
 Este README está orientado a **Linux** (Ubuntu/Debian y derivados).
 
@@ -48,13 +48,20 @@ node -v
 npm -v
 ```
 
+en caso de no tener instalado nodejs, aplique este comando para instalarlo:
+
+```bash
+curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
+sudo apt install -y nodejs
+```
+
 ## Variables de entorno
 
-Usa `.env.example` como plantilla para crear tu archivo `.env` local y completar tus credenciales reales de base de datos. Este frontend usa la variable:
+Usa `.env.example` como plantilla para crear tu archivo `.env` local. Este frontend usa la variable:
 
 - `VITE_LOCAL_HOST` → URL base del backend (usada en `src/configs/axios/index.js`).
 
-Ejemplo de archivo `frontend/.env`:
+Ejemplo de archivo: `frontend/.env`:
 
 ```bash
 VITE_LOCAL_HOST=http://localhost:3000
