@@ -37,18 +37,10 @@ Incluye reglas de negocio y validaciones de dominio (junto con validacion de num
 
 Usa `.env.example` como plantilla para crear tu archivo `.env` local y completar tus credenciales reales de base de datos.
 
-Debes definir tus datos de PostgreSQL en `.env` con base en este ejemplo:
-
 ```dotenv
 POSTGRES_USER=tu_usuario_de_postgres
 POSTGRES_PASSWORD=tu_contraseña_de_postgres
 POSTGRES_HOST=localhost
-```
-
-Además, agrega la versión de Ruby usada por el proyecto:
-
-```dotenv
-RUBY_VERSION=3.3.6
 ```
 
 > Recomendado: usar el mismo valor para evitar incompatibilidades al instalar gems o ejecutar Rails.
@@ -69,21 +61,19 @@ Inicia PostgreSQL:
 sudo service postgresql start
 ```
 
-Crea y prepara base de datos:
-
-1. Crea la tabla en la base de datos
+1. Crea la base de datos
 
 ```bash
 rails db:create
 ```
 
-2. migra las configuraciones
+2. migra las configuraciones del esquema (schema) para entrar las tablas en la base de datos
 
 ```bash
 rails db:migrate
 ```
 
-3. Corre los datos de la tabla type_document y type_person
+3. Corre los datos (inserts) de la tabla type_document y type_person
 
 ```bash
 rails db:seed
